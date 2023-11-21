@@ -7,14 +7,6 @@ public abstract class Medicine implements Shippable {
         mMedicineName = medicineName;
     }
 
- public boolean isTemperatureRangeAcceptable(Double lowTemperature, Double highTemperature) {
-        if (this.minimumTemperature() <= lowTemperature &&
-                highTemperature <= this.maximumTemperature()) {
-            return true;
-        }
-        return false;
-    }
-
     public String getMedicineName() {
         return mMedicineName;
     }
@@ -25,6 +17,14 @@ public abstract class Medicine implements Shippable {
 
     public double maximumTemperature() {
         return 100.0;
+    }
+
+    public boolean isTemperatureRangeAcceptable(Double lowTemperature, Double highTemperature) {
+        if (this.minimumTemperature() <= lowTemperature &&
+                highTemperature <= this.maximumTemperature()) {
+            return true;
+        }
+        return false;
     }
 
     public abstract MedicineSchedule getSchedule();
