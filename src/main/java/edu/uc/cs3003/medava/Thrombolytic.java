@@ -5,6 +5,11 @@ public Thrombolytic() {
   super("Thrombolytic");
 }
   @Override
+  public MedicineSchedule getSchedule() {
+      return MedicineSchedule.Uncontrolled;
+    }
+  
+  @Override
   public double minimumTemperature() {
     System.out.println("Getting the minimum safe temperature for a Thrombolytic drug.");
     return 39.2;
