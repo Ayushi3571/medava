@@ -1,10 +1,11 @@
 package edu.uc.cs3003.medava;
+
 public class Pharmacy {
     public Pharmacy(String pharmacyName) {
         mPharmacyName = pharmacyName;
     }
-        public boolean send(Transporter t) {
-        Medicine advil = new Medicine("Advil");
+    public boolean send(Transporter t) {
+        Medicine advil = new Ibuprofen();
         if (t.load(advil)) {
             System.out.println(String.format("Sending %s on the %s transporter.", advil.getMedicineName(),
                     t.getTransporterName()));
@@ -23,8 +24,30 @@ public class Pharmacy {
                     t.getTransporterName()));
             return false;
         }
+
+        Medicine oxycontin = new Oxycodone();
+        if (t.load(oxycontin)) {
+            System.out.println(String.format("Sending %s on the %s transporter.", oxycontin.getMedicineName(),
+                    t.getTransporterName()));
+        } else {
+            System.out.println(String.format("Cannot load %s on to the %s transporter.", oxycontin.getMedicineName(),
+                    t.getTransporterName()));
+            return false;
+        }
+
+        Jarvik heart = new Jarvik("01j9a9lk71");
+        if (t.load(heart)) {
+            System.out.println(String.format("Sending %s on the %s transporter.", heart.getMedicineName(),
+                    t.getTransporterName()));
+        } else {
+            System.out.println(String.format("Cannot load %s on to the %s transporter.", heart.getMedicineName(),
+                    t.getTransporterName()));
+            return false;
+        }
+
         return true;
-    }
+    }    
+    
     public String pharmacyName() {
         return mPharmacyName;
     }
