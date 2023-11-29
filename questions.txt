@@ -1,0 +1,13 @@
+1. We know that a class must invoke its supertype's constructor, does this mean that if a superclass has multiple constructors we need to invoke all of them in our class? 
+For example, if medicine had 2 constructors would we define 2 constructors for Thrombolytic? What is considered good practice if I was writing professional code with inheritance?
+
+2. If I create a class that inherits from Ibuprofen or another subclass of medicine, will I have to redefine the function MedicineSchedule? Since the purpose of an abstract function is to ensure each inherited class defines the function (MedicineSchedule in this case), can the function definition be inherited by a subclass of Ibuprofen?
+
+3. If I was being irresponsible and defined the function isTemperatureRangeAcceptable so that it does not return a Boolean value in the class Jarvik, could I still run my code. I ask because it seems like we are checking the parameters of the function and not the return value?
+
+4. It seems like we can do what Shippable as an interface does using an abstract class. If we redefined medicine to have getSchedule(), getMedicineName() and isTemperatureRangeAcceptable as abstract functions then we would still have to define all of those in subclasses. Of course, we lose flexibility but if we knew beforehand that we do not need to transport anything other than medicine, is it better to use an interface or an abstract class?
+
+
+
+
+
